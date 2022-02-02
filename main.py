@@ -7,11 +7,14 @@ class AutomatedTrafficCounter:
 
     # This is a Python script developed by ABM Moniruzzaman (Monir) for the code test .
 
+    @staticmethod
     def check_data(data):
         # Use a breakpoint in the code line below to debug your script.
         df = pd.read_csv(data, header=None)
 
         try:
+            if df.empty is not False:
+                raise ValueError('There is no data in the file')
             if not len(df.columns) == 2:
                 raise ValueError('data in this file have more than "datetime" and "cars" columns')
         except (ValueError, IndexError):
@@ -32,6 +35,7 @@ class AutomatedTrafficCounter:
 
         return df
 
+    @staticmethod
     def traffic_count(df):
         # Task 01 code from here
         # sum up cars column in the dataframe to get the number of cars seen in total
@@ -101,22 +105,3 @@ class AutomatedTrafficCounter:
 
         return total_number_of_cars, df_car_seen_on_date, dfm_top3, period_df
 
-    if __name__ == '__main__':
-        data = Path("data/traffic_data_ex1.csv")
-        # data = Path("/data/traffic_data_ex2.csv")
-        df = check_data(data)
-        task01, task02, task03, task04 = traffic_count(df)
-
-        print("Task 01: total_number_of_cars:", task01)
-        print("Task 02: df_car_seen_on_date:")
-        print("----------------------------------")
-        print(task02)
-        print("----------------------------------")
-        print("Task 03: the top 3 half hours with most cars...")
-        print("----------------------------------")
-        print(task03)
-        print("----------------------------------")
-        print("Task 04: the top 3 half hours with most cars...")
-        print("----------------------------------")
-        print(task04)
-        print("----------------------------------")
