@@ -1,16 +1,11 @@
-# This is a sample Python script.
-
 # import necessary libraries - Monir
 from pathlib import Path
 import pandas as pd
-import numpy as np
-import datetime
-from datetime import datetime
 
 
 class AutomatedTrafficCounter:
 
-    # This is a sample Python script.
+    # This is a Python script developed by ABM Moniruzzaman (Monir) for the code test .
 
     def check_data(data):
         # Use a breakpoint in the code line below to debug your script.
@@ -67,23 +62,61 @@ class AutomatedTrafficCounter:
         # delete the index
         del dfm['index']
         # convert the 'datetime' column to datetime format as input
-        # df_30m_top3['datetime'] = pd.to_datetime(df_30m_top3['datetime'])
         dfm['date-time'] = pd.to_datetime(dfm['datetime']).dt.strftime('%Y-%m-%dT%H:%M:%SZ')
-        dfm_top3 = dfm
+        dfm_top3 = dfm[['date-time', 'cars']]
 
-        return total_number_of_cars, df_car_seen_on_date, dfm_top3
+        # Task 04: the 1.5 hour period with least cars
+        df.set_index('datetime')
+        # Timestamp
+        time_period = pd.Timedelta("01:30:00")
+        period_df = pd.DataFrame(columns=['from_date', 'to_date', 'cars_sum'])
+        cars = []
+        from_date = []
+        to_date = []
+
+        for n in range(1, len(df['datetime'])):
+            for m in range(0, len(df['datetime'])):
+                if not (df.iloc[n]['datetime'] - df.iloc[m]['datetime']) > time_period:
+                    # break
+                    if (df.iloc[n]['datetime'] - df.iloc[m]['datetime']) == time_period:
+                        # print("From function: 1 and half hours", n, m)
+                        nn = n
+                        mm = m
+                        if cars is not None:
+                            car = 0
+                        for i in range(mm, nn):
+                            car += df.iloc[i]['cars']
+                        cars.append(car)
+                        from_date.append(df.iloc[m]['datetime'])
+                        to_date.append(df.iloc[n]['datetime'])
+
+        # inserting values to the period_df pandas dataframe
+        for i in range(0, len(cars)):
+            period_df.at[i, 'from_date'] = from_date[i]
+            period_df.at[i, 'to_date'] = to_date[i]
+            period_df.at[i, 'cars_sum'] = cars[i]
+
+        # Select a pandas dataframe row where the column 'cars_sum' has minimum value
+        period_df = period_df[period_df['cars_sum'] == period_df['cars_sum'].min()]
+
+        return total_number_of_cars, df_car_seen_on_date, dfm_top3, period_df
 
     if __name__ == '__main__':
         data = Path("data/traffic_data_ex1.csv")
         # data = Path("/data/traffic_data_ex2.csv")
         df = check_data(data)
-        a, b, c = traffic_count(df)
+        task01, task02, task03, task04 = traffic_count(df)
 
-        print("total_number_of_cars:", a)
-        print("df_car_seen_on_date:")
-        print(b)
+        print("Task 01: total_number_of_cars:", task01)
+        print("Task 02: df_car_seen_on_date:")
+        print("----------------------------------")
+        print(task02)
+        print("----------------------------------")
         print("Task 03: the top 3 half hours with most cars...")
-        print(c)
-
-
-
+        print("----------------------------------")
+        print(task03)
+        print("----------------------------------")
+        print("Task 04: the top 3 half hours with most cars...")
+        print("----------------------------------")
+        print(task04)
+        print("----------------------------------")
