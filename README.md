@@ -11,6 +11,7 @@ I used Python [pandas](https://pandas.pydata.org/) library for the tasks to solv
 * Run the python file **auto_traffic_counter.py** to get all the outputs. It has following five functions to generates the expected outputs. 
     * check_data: to make ready to manipulate. 
     * task01: generates the expected outputs for the number of cars seen in total
+      ![task01](data/task01.PNG)
     * task02: generates the expected outputs for a sequence of lines where each line contains a date (in yyyy-mm-dd format) and the number of cars seen on that day (eg. 2016-11-23 289) for all days listed in the input file.
     * task03: generates the expected outputs for the the top 3 half hours with most cars, in the same format as the input file
     * task04: generates the expected outputs for the 1.5 hour period with least cars  
