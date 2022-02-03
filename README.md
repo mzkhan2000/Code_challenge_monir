@@ -3,7 +3,7 @@
 This is a Python library for creating workflows of Apache Airflow task instances that captures the provenance from the Apache Airflow task's logs and convert that to ProvWF RDF, according to the [Prov Workflow (ProvWF)](https://data.surroundaustralia.com/def/provworkflow) profile of the 
 [PROV-O standard](https://www.w3.org/TR/2013/REC-prov-o-20130430/).
 
-### How to run the script and tests? ###
+### How to run the program to get all the outputs and tests the program? ###
 
 * Please unpack zip file and open folder **'Code_challenge_monir-master'** as a project in any python IDE such as Pycharm.
 * Running Airflow in Docker and Docker Compose:
