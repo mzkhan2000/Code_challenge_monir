@@ -145,4 +145,5 @@ if __name__ == '__main__':
     print("----------------------------------")
     print(task04_result)
     print("----------------------------------")
+    print("End of the program")
 
