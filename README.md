@@ -20,6 +20,12 @@ I used Python [pandas](https://pandas.pydata.org/) library for the tasks to solv
 * Run the python file **test_auto_traffic_counter.py** to get the tests the program:
 * This checks the outputs generated from four functions (task01, task02, task03 and task04) of this program are correct.
 
+### How to get data to run and test program? ###
+* Data folder in the project directory has two csv files. 
+* The file **traffic_data_ex1.csv** is actually the example file that was included on page 2 of the AIPS Coding Challenge.
+* The file **traffic_data_ex2.csv** is extended version of data (adding more data see see the results variations).
+
+
 _Developed by:_  
 **Monir Moniruzzama**  
 _Ontological Research Scientist_  
