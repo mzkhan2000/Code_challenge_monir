@@ -1,6 +1,6 @@
 # Readme #
 
-This is a Python scripts for 
+This is a Python scripts to make a program 'an automated traffic counter' for solving the tasks in the AIPS Coding Challenge.  
 I used Python [pandas](https://pandas.pydata.org/) library for the tasks to solve since pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
 
 
