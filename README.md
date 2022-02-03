@@ -5,9 +5,9 @@ This is a Python library for creating workflows of Apache Airflow task instances
 
 ### How to run the script and tests? ###
 
-* Please unpack zip file and open folder 'Code_challenge_monir-master' as a project in any python IDE such as Pycharm.
+* Please unpack zip file and open folder **'Code_challenge_monir-master'** as a project in any python IDE such as Pycharm.
 * Running Airflow in Docker and Docker Compose:
-* Run the python file auto_traffic_counter.py to get all the outputs:
+* Run the python file **auto_traffic_counter.py** to get all the outputs:
     * Task 01: the number of cars seen in total
     * Task 02: a sequence of lines where each line contains a date (in yyyy-mm-dd format) and the number of cars seen on that day (eg. 2016-11-23 289) for all days listed in the input file.
     * Task 03: the top 3 half hours with most cars, in the same format as the input file
