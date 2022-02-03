@@ -12,14 +12,19 @@ I used Python [pandas](https://pandas.pydata.org/) library for the tasks to solv
     * check_data: to make ready to manipulate. 
     * task01: generates the expected outputs for the number of cars seen in total
     
-      ![task01](data/task01.PNG)
+     ![task01](data/task01.PNG)
       
     * task02: generates the expected outputs for a sequence of lines where each line contains a date (in yyyy-mm-dd format) and the number of cars seen on that day (eg. 2016-11-23 289) for all days listed in the input file.
     
-    ![task02](data/task02.PNG)
+     ![task02](data/task02.PNG)
     
     * task03: generates the expected outputs for the the top 3 half hours with most cars, in the same format as the input file
+    
+      ![task03](data/task03.PNG)
+    
     * task04: generates the expected outputs for the 1.5 hour period with least cars  
+    
+      ![task04](data/task04.PNG)
 
 ### How to tests the program? ###
 
