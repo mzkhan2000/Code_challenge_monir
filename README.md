@@ -24,7 +24,7 @@ I used Python [pandas](https://pandas.pydata.org/) library for the tasks to solv
     
     * task04: generates the expected outputs for the 1.5 hour period with least cars  
     
-     ![task04](data/task04.PNG)
+      ![task04](data/task04.PNG)
 
 ### How to tests the program? ###
 
