@@ -5,7 +5,7 @@ import pandas as pd
 
 class AutomatedTrafficCounter:
 
-    # This is a Python script developed by ABM Moniruzzaman (Monir) for the code test .
+    # This is a Python script developed by ABM Moniruzzaman (Monir) for the tasks in the AIPS Coding Challenge.
 
     def __init__(self, traffic_data_file):
         if isinstance(traffic_data_file, pd.DataFrame):
@@ -24,8 +24,9 @@ class AutomatedTrafficCounter:
         except (ValueError, IndexError):
             exit('Could not complete request.')
 
-        # add "datetime" and "cars" columns to the dataframe
-        self.df.columns = ["datetime", "cars"]
+        # add "datetime" and "cars" columns to the dataframe if not previously added
+        if "datetime" and "cars" not in self.df.columns:
+            self.df.columns = ["datetime", "cars"]
         # convert the 'datetime' column to datetime format
         self.df['datetime'] = pd.to_datetime(self.df['datetime'])
         self.df.set_index('datetime')
@@ -75,7 +76,7 @@ class AutomatedTrafficCounter:
         # delete the index
         del dfm['index']
         # convert the 'datetime' column to datetime format as input
-        dfm['date-time'] = pd.to_datetime(dfm['datetime']).dt.strftime('%Y-%m-%dT%H:%M:%SZ')
+        dfm['date-time'] = pd.to_datetime(dfm['datetime']).dt.strftime('%Y-%m-%dT%H:%M:%S')
         dfm_top3 = dfm[['date-time', 'cars']]
 
         return dfm_top3
@@ -141,9 +142,9 @@ if __name__ == '__main__':
     print("----------------------------------")
     print(task03_result)
     print("----------------------------------")
-    print("Task 04: the top 3 half hours with most cars...")
+    print("Task 04: the 1.5 hour period with least cars ")
     print("----------------------------------")
     print(task04_result)
     print("----------------------------------")
-    print("End of the program")
+    print("-------End of the program-----------")
 
