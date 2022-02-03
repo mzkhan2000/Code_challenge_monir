@@ -20,7 +20,7 @@ I used Python [pandas](https://pandas.pydata.org/) library for the tasks to solv
 * Run the python file **test_auto_traffic_counter.py** to get the tests the program:
 * This checks the outputs generated from four functions (task01, task02, task03 and task04) of this program are correct.
 
-_Creator:_  
+_Developed by:_  
 **Monir Moniruzzama**  
 _Ontological Research Scientist_  
 [SURROUND Australia Pty Ltd](https://surroundaustralia.com)  
