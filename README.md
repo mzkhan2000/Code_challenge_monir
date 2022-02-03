@@ -1,12 +1,13 @@
 # Readme #
 
-This is a Python library for creating workflows of Apache Airflow task instances that captures the provenance from the Apache Airflow task's logs and convert that to ProvWF RDF, according to the [Prov Workflow (ProvWF)](https://data.surroundaustralia.com/def/provworkflow) profile of the 
-[PROV-O standard](https://www.w3.org/TR/2013/REC-prov-o-20130430/).
+This is a Python scripts for 
+I used Python [pandas](https://pandas.pydata.org/) library for the tasks to solve since pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
+
 
 ### How to run the program to get all the outputs and tests the program? ###
 
 * Please unpack zip file and open folder **'Code_challenge_monir-master'** as a project in any python IDE such as Pycharm.
-* Running Airflow in Docker and Docker Compose:
+* Please setup the python environment such as virtual environments and import pyhton libraries from requirement.txt file
 * Run the python file **auto_traffic_counter.py** to get all the outputs:
     * Task 01: the number of cars seen in total
     * Task 02: a sequence of lines where each line contains a date (in yyyy-mm-dd format) and the number of cars seen on that day (eg. 2016-11-23 289) for all days listed in the input file.
